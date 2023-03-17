@@ -15,7 +15,7 @@ namespace AddressBookWebApi.Models.Contacts
         public string Email { get; set; }
 
         [Required]
-        [RegularExpression(@"^(\+91)?(\ )?([\d]{10})$", ErrorMessage = "Mobile is invalid")]
+        [RegularExpression(@"^(\+91)?(\ )?(\0)?([\d]{10})$", ErrorMessage = "Mobile is invalid")]
         public string Mobile { get; set; }
 
         public string? Landline { get; set; }
