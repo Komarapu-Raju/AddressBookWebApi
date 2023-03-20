@@ -12,39 +12,39 @@ namespace AddressBook.Api.Controllers
         private readonly IContactServices _contactServices;
         public ContactController(IContactServices contactServices)
         {
-            _contactServices = contactServices;
+            this._contactServices = contactServices;
         }
 
         [HttpGet("all")]
         public List<ContactDTO> GetContactList()
         {
-            return _contactServices.GetContactsList();
+            return this._contactServices.GetContactsList();
         }
 
         [HttpGet("{id}")]
         public IActionResult GetContactById(int id)
         {
-            if (_contactServices.GetContactById(id) == null)
+            if (this._contactServices.GetContactById(id) == null)
             {
                 return NotFound("Contact not found");
             }
 
-            return Ok(_contactServices.GetContactById(id));
+            return Ok(this._contactServices.GetContactById(id));
         }
 
         [HttpPost("add")]
         public IActionResult AddContact(Contact newContact)
         {
-            _contactServices.AddContact(newContact);
+            this._contactServices.AddContact(newContact);
             return Ok("Contact added to addressBook");
         }
 
         [HttpPut("update/{id}")]
         public IActionResult UpdateContact(int id, Contact updatedContact)
         {
-            if (_contactServices.GetContactById(id) != null)
+            if (this._contactServices.GetContactById(id) != null)
             {
-                _contactServices.UpdateContact(id, updatedContact);
+                this._contactServices.UpdateContact(id, updatedContact);
                 return Ok("Contact updated successfully");
             }
 
@@ -54,9 +54,9 @@ namespace AddressBook.Api.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteContact(int id)
         {
-            if (_contactServices.GetContactById(id) != null)
+            if (this._contactServices.GetContactById(id) != null)
             {
-                _contactServices.DeleteContact(id);
+                this._contactServices.DeleteContact(id);
                 return Ok("Contact deleted successfully");
             }
 

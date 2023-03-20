@@ -16,38 +16,38 @@ namespace AddressBook.Services.Contacts.Services
         public ContactServices(AddressBookDBContext db, IMapper mapper)
         {
             this.mapper = mapper;
-            _db = db;
+            this._db = db;
         }
 
         public void AddContact(Contact newContact)
         {
-            _db.ContactTable.Add(newContact);
-            _db.SaveChanges();
+            this._db.ContactTable.Add(newContact);
+            this._db.SaveChanges();
         }
 
         public void UpdateContact(int id, Contact updatedContact)
         {
-            Contact existingContact = _db.ContactTable.Find(id);
-            _db.ContactTable.Entry(existingContact).State = EntityState.Detached;
-            _db.ContactTable.Update(updatedContact);
-            _db.SaveChanges();
+            Contact existingContact = this._db.ContactTable.Find(id);
+            this._db.ContactTable.Entry(existingContact).State = EntityState.Detached;
+            this._db.ContactTable.Update(updatedContact);
+            this._db.SaveChanges();
         }
 
         public void DeleteContact(int id)
         {
-            var obj = _db.ContactTable.Find(id);
-            _db.ContactTable.Remove(obj);
-            _db.SaveChanges();
+            var obj = this._db.ContactTable.Find(id);
+            this._db.ContactTable.Remove(obj);
+            this._db.SaveChanges();
         }
 
         public ContactDTO GetContactById(int id)
         {
-            return mapper.Map<ContactDTO>(_db.ContactTable.Find(id));
+            return this.mapper.Map<ContactDTO>(this._db.ContactTable.Find(id));
         }
 
         public List<ContactDTO> GetContactsList()
         {
-            return mapper.Map<List<ContactDTO>>(_db.ContactTable.ToList());
+            return this.mapper.Map<List<ContactDTO>>(this._db.ContactTable.ToList());
         }
     }
 }
