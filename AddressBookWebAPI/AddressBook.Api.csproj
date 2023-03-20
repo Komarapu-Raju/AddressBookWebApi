@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -21,8 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AddressBookWebApi.Infrastructure\AddressBookWebApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\AddressBookWebApi.Services\AddressBookWebApi.Services.csproj" />
+    <ProjectReference Include="..\AddressBookWebApi.DTO\AddressBook.Core.Models.csproj" />
+    <ProjectReference Include="..\AddressBookWebApi.Infrastructure\AddressBook.Infrastructure.csproj" />
+    <ProjectReference Include="..\AddressBookWebApi.Services\AddressBook.Services.csproj" />
   </ItemGroup>
 
 </Project>

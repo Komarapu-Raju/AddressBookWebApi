@@ -1,8 +1,8 @@
-﻿using AddressBookWebApi.DTO.Contacts;
-using AddressBookWebApi.Models.Contacts;
+﻿using AddressBook.Core.Models.Contacts;
+using AddressBook.Data.Models.Contacts;
 using AutoMapper;
 
-namespace AddressBookWebApi.DTO.Profiles
+namespace AddressBook.DTO.Profiles
 {
     public class ContactMapper : Profile
     {

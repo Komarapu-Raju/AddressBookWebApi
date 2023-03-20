@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using AddressBookWebApi.Infrastructure.EFCore.DBContexts;
-using AddressBookWebApi.DTO.Profiles;
-using AddressBookWebApi.Services.Contacts.Interfaces;
-using AddressBookWebApi.Services.Contacts.Services;
+using AddressBook.Services.Contacts.Services;
+using AddressBook.Services.Contacts.Interfaces;
+using AddressBook.Infrastructure.EFCore.DBContexts;
+using AddressBook.DTO.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 

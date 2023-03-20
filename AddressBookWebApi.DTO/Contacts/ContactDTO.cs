@@ -1,4 +1,4 @@
-﻿namespace AddressBookWebApi.DTO.Contacts
+﻿namespace AddressBook.Core.Models.Contacts
 {
     public class ContactDTO
     {

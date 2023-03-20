@@ -1,7 +1,7 @@
-﻿using AddressBookWebApi.DTO.Contacts;
-using AddressBookWebApi.Models.Contacts;
+﻿using AddressBook.Core.Models.Contacts;
+using AddressBook.Data.Models.Contacts;
 
-namespace AddressBookWebApi.Services.Contacts.Interfaces
+namespace AddressBook.Services.Contacts.Interfaces
 {
     public interface IContactServices
     {

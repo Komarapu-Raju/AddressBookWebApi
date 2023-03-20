@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBookWebApi", "AddressBookWebApi.csproj", "{DA058FE1-DA54-409E-B1D2-5AEE8E7E8906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook.Api", "AddressBook.Api.csproj", "{DA058FE1-DA54-409E-B1D2-5AEE8E7E8906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookWebApi.Models", "..\AddressBookWebApi.Models\AddressBookWebApi.Models.csproj", "{CF6CED5E-2351-4A6A-BD19-C51897E334C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook.Data.Models", "..\AddressBookWebApi.Models\AddressBook.Data.Models.csproj", "{CF6CED5E-2351-4A6A-BD19-C51897E334C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookWebApi.Infrastructure", "..\AddressBookWebApi.Infrastructure\AddressBookWebApi.Infrastructure.csproj", "{E5ECEC42-A809-4387-A87F-0105169AE083}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook.Infrastructure", "..\AddressBookWebApi.Infrastructure\AddressBook.Infrastructure.csproj", "{E5ECEC42-A809-4387-A87F-0105169AE083}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookWebApi.DTO", "..\AddressBookWebApi.DTO\AddressBookWebApi.DTO.csproj", "{4015D1FF-5F17-4AEC-AAD6-32749DBEA055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook.Core.Models", "..\AddressBookWebApi.DTO\AddressBook.Core.Models.csproj", "{4015D1FF-5F17-4AEC-AAD6-32749DBEA055}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookWebApi.Services", "..\AddressBookWebApi.Services\AddressBookWebApi.Services.csproj", "{6B21E971-7587-4DBD-9DC5-7ED15AAF786D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook.Services", "..\AddressBookWebApi.Services\AddressBook.Services.csproj", "{6B21E971-7587-4DBD-9DC5-7ED15AAF786D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

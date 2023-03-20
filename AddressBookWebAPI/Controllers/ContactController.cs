@@ -1,12 +1,12 @@
-﻿using AddressBookWebApi.DTO.Contacts;
-using AddressBookWebApi.Models.Contacts;
-using AddressBookWebApi.Services.Contacts.Interfaces;
+﻿using AddressBook.Core.Models.Contacts;
+using AddressBook.Data.Models.Contacts;
+using AddressBook.Services.Contacts.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AddressBookWebApi.Controllers
 {
     [ApiController]
-    [Route("ContactController")]
+    [Route("api/contact")]
     public class ContactController : ControllerBase
     {
         private readonly IContactServices _contactServices;
@@ -15,13 +15,13 @@ namespace AddressBookWebApi.Controllers
             _contactServices = contactServices;
         }
 
-        [HttpGet("GetContactList")]
+        [HttpGet("all")]
         public List<ContactDTO> GetContactList()
         {
             return _contactServices.GetContactsList();
         }
 
-        [HttpGet("GetContactById/{id}")]
+        [HttpGet("{id}")]
         public IActionResult GetContactById(int id)
         {
             if (_contactServices.GetContactById(id) == null)
@@ -32,26 +32,26 @@ namespace AddressBookWebApi.Controllers
             return Ok(_contactServices.GetContactById(id));
         }
 
-        [HttpPost("AddContact")]
+        [HttpPost("add")]
         public IActionResult AddContact(Contact newContact)
         {
             _contactServices.AddContact(newContact);
             return Ok("Contact added to addressBook");
         }
 
-        [HttpPut("UpdateContact")]
-        public IActionResult UpdateContact(Contact updatedContact)
+        [HttpPut("update/{id}")]
+        public IActionResult UpdateContact(int id, Contact updatedContact)
         {
-            if (_contactServices.GetContactById(updatedContact.Id) != null)
+            if (_contactServices.GetContactById(id) != null)
             {
-                _contactServices.UpdateContact(updatedContact.Id, updatedContact);
+                _contactServices.UpdateContact(id, updatedContact);
                 return Ok("Contact updated successfully");
             }
 
             return NotFound("Contact not found to update");
         }
 
-        [HttpDelete("DeleteContact/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteContact(int id)
         {
             if (_contactServices.GetContactById(id) != null)

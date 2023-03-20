@@ -1,7 +1,7 @@
-﻿using AddressBookWebApi.Models.Contacts;
+﻿using AddressBook.Data.Models.Contacts;
 using Microsoft.EntityFrameworkCore;
 
-namespace AddressBookWebApi.Infrastructure.EFCore.DBContexts
+namespace AddressBook.Infrastructure.EFCore.DBContexts
 {
     public class AddressBookDBContext : DbContext
     {

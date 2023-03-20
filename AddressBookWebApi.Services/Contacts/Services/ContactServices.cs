@@ -1,11 +1,11 @@
-﻿using AddressBookWebApi.DTO.Contacts;
-using AddressBookWebApi.Infrastructure.EFCore.DBContexts;
-using AddressBookWebApi.Models.Contacts;
-using AddressBookWebApi.Services.Contacts.Interfaces;
+﻿using AddressBook.Infrastructure.EFCore.DBContexts;
+using AddressBook.Services.Contacts.Interfaces;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using AddressBook.Core.Models.Contacts;
+using AddressBook.Data.Models.Contacts;
 
-namespace AddressBookWebApi.Services.Contacts.Services
+namespace AddressBook.Services.Contacts.Services
 {
     public class ContactServices : IContactServices
     {
@@ -27,13 +27,8 @@ namespace AddressBookWebApi.Services.Contacts.Services
 
         public void UpdateContact(int id, Contact updatedContact)
         {
-            var existingContact = _db.ContactTable.Find(id);
-
-            if (existingContact != null)
-            {
-                _db.Entry(existingContact).State = EntityState.Detached;
-            }
-
+            Contact existingContact = _db.ContactTable.Find(id);
+            _db.ContactTable.Entry(existingContact).State = EntityState.Detached;
             _db.ContactTable.Update(updatedContact);
             _db.SaveChanges();
         }

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AddressBookWebApi.Models\AddressBookWebApi.Models.csproj" />
+    <ProjectReference Include="..\AddressBookWebApi.Models\AddressBook.Data.Models.csproj" />
   </ItemGroup>
 
 </Project>
