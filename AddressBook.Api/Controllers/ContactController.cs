@@ -3,7 +3,7 @@ using AddressBook.Data.Models.Contacts;
 using AddressBook.Services.Contacts.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AddressBookWebApi.Controllers
+namespace AddressBook.Api.Controllers
 {
     [ApiController]
     [Route("api/contact")]
